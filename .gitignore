@@ -1,0 +1,74 @@
+# Ignorer les fichiers et dossiers générés par Maven
+/target/
+/pom.xml.tag
+/pom.xml.releaseBackup
+/pom.xml.versionsBackup
+/logs/
+*.log
+*.log.*
+/dependency-reduced-pom.xml
+/release.properties
+
+# Ignorer les fichiers de build de Visual Studio Code
+.vscode/
+
+# Ignorer les fichiers et dossiers spécifiques à IntelliJ IDEA
+/.idea/
+/*.iml
+/*.ipr
+/*.iws
+
+# Ignorer les fichiers de configuration Java
+.classpath
+.project
+/.settings/
+/*.factorypath
+
+# Ignorer les fichiers de configuration Gradle (si présent)
+.gradle/
+/build/
+
+# Ignorer les fichiers de base de données locaux
+*.h2.db
+*.mv.db
+
+# Ignorer les fichiers de configuration sensibles
+*.env
+*.local.properties
+*.settings.xml
+
+# Ignorer les fichiers de cache spécifiques
+/.DS_Store
+/.cache/
+/*.class
+/.sass-cache/
+
+# Ignorer les fichiers générés par les tests
+/test-results/
+/test-output/
+/jacoco.exec
+
+# Ignorer les archives compressées et les binaires
+*.war
+*.jar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Ignorer les fichiers générés par Docker (si applicable)
+/.docker/
+docker-compose.override.yml
+
+# Ignorer les fichiers générés par l'intégration continue (CI)
+/.jenkins/
+/.circleci/
+/.gitlab-ci.yml
+/.travis.yml
+
+# Ignorer les fichiers de configuration d'éditeurs de texte (Sublime, VSCode, etc.)
+/.editorconfig
+/.envrc
+
+# Ignorer les fichiers de modules Node.js (si applicable)
+node_modules/
