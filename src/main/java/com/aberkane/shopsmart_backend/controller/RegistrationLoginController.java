@@ -36,7 +36,7 @@ public class RegistrationLoginController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
-        if(userRepository.findByUsername(user.getUsername()) != null) {
+        if(userRepository.findByEmail(user.getEmail()) != null) {
             return ResponseEntity.badRequest().body("User already exists");
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -46,10 +46,10 @@ public class RegistrationLoginController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) {
         try {
-           Authentication authentication= authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+           Authentication authentication= authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));
            if(authentication.isAuthenticated()) {
                Map<String,Object> authData =  new HashMap<>();
-                authData.put("token", jwtUtils.generateToken(user.getUsername()));
+                authData.put("token", jwtUtils.generateToken(user.getEmail()));
                 authData.put("type", "Bearer");
                return ResponseEntity.ok(authData);
            }
