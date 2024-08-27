@@ -2,6 +2,8 @@ package com.aberkane.shopsmart_backend.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -54,4 +56,21 @@ public class Order {
         this.updatedAt = LocalDateTime.now();
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", user=" + user +
+                ", totalPrice=" + totalPrice +
+                ", currency='" + currency + '\'' +
+                ", stripePaymentId='" + stripePaymentId + '\'' +
+                ", stripeChargeId='" + stripeChargeId + '\'' +
+                ", paymentStatus=" + paymentStatus +
+                ", shippingAddress='" + shippingAddress + '\'' +
+                ", shippingCountry='" + shippingCountry + '\'' +
+                ", orderStatus=" + orderStatus +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

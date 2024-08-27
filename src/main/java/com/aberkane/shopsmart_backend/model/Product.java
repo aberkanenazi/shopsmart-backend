@@ -28,7 +28,7 @@ public class Product {
     private ProductCategory category;
     @Column(name = "is_active", nullable = false)
     private Boolean isActive;
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
     private List<ProductImage> productImages;
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
@@ -46,4 +46,17 @@ public class Product {
         this.updatedAt = LocalDateTime.now();
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId=" + productId +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", isActive=" + isActive +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

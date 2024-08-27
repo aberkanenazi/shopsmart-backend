@@ -36,4 +36,13 @@ public class ProductImage {
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
+
+    @Override
+    public String toString() {
+        return "ProductImage{" +
+                "imageUrl='" + imageUrl + '\'' +
+                ", imageId=" + imageId +
+                ", isMain=" + isMain +
+                '}';
+    }
 }

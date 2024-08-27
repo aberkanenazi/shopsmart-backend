@@ -36,4 +36,15 @@ public class ProductCategory {
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
+
+    @Override
+    public String toString() {
+        return "ProductCategory{" +
+                "categoryId=" + categoryId +
+                ", categoryName='" + categoryName + '\'' +
+                ", categoryDescription='" + categoryDescription + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }
